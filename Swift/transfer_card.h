@@ -5,6 +5,8 @@
 #include <QtGui>
 #include <QAbstractSpinBox>
 #include "priorbank.h"
+#include <QFileDialog>
+#include <QFile>
 
 namespace Ui {
 class Transfer_card;

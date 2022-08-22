@@ -23,6 +23,7 @@ HEADERS += \
     credit_card_class.h \
     mainwindow.h \
     priorbank.h \
+    receipt.h \
     transfer_card.h
 
 FORMS += \

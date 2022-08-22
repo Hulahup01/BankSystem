@@ -152,6 +152,9 @@ void Transfer_card::on_step_3_button_clicked()
 {
     create_step_1_window();
 
+    QString fname =  QFileDialog::getExistingDirectory(this, tr("Open Directory"),
+    "/home",QFileDialog::ShowDirsOnly| QFileDialog::DontResolveSymlinks)+"/receipt.txt";
+
     hide();
 }
 Transfer_card::~Transfer_card()
