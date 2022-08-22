@@ -10,10 +10,10 @@ MainWindow::MainWindow(QWidget *parent)
 
     trans_card_window = new Transfer_card();
     //connect(trans_card_window, &Transfer_card::back_to_mainwindow, this, &MainWindow::show);
-    PriorBank priorbank(2.5);
-    priorbank.AddClient(Client_class("Tatarinov", "Slava", "Vladimirovich", "Minsk", "Hikalo", 9, 50000));
-    priorbank.AddClient(Client_class("Tatarinov", "Ilya", "Vladimirovich", "Mogilev", "Kuleshova", 24, 9));
-    priorbank.AddClient(Client_class("Tatarinov", "Vladimir", "Sergeevich", "Mogilev", "Kuleshova", 24, 31500));
+    priorbank = new PriorBank(2.5);
+    priorbank->AddClient(Client_class("Tatarinov", "Slava", "Vladimirovich", "Minsk", "Hikalo", 9, 50000));
+    priorbank->AddClient(Client_class("Tatarinov", "Ilya", "Vladimirovich", "Mogilev", "Kuleshova", 24, 9));
+    priorbank->AddClient(Client_class("Tatarinov", "Vladimir", "Sergeevich", "Mogilev", "Kuleshova", 24, 31500));
 }
 
 MainWindow::~MainWindow(){
@@ -54,9 +54,17 @@ bool MainWindow::select_client()
         return false;
 }
 
-
 void MainWindow::on_pushButton_2_clicked()
 {
+    trans_card_window->set_priorbank(priorbank);
     trans_card_window->show();
+}
+
+
+void MainWindow::on_pushButton_3_clicked()
+{
+     for(auto i : priorbank->get_clients()){
+         qDebug() << i.credit_card().get_card_numb();
+     }
 }
 

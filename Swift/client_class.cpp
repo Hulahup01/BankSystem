@@ -7,18 +7,23 @@ Client_class::Client_class(std::string Last_name, std::string First_name, std::s
 {
 
 
-    Add_Client_Dialog* dialog = new Add_Client_Dialog;
-    dialog->show();
-    dialog->activateWindow();
+//    Add_Client_Dialog* dialog = new Add_Client_Dialog;
+//    dialog->show();
+//    dialog->activateWindow();
 
-    if (dialog->exec() == QDialog::Accepted) {
-        credit.set_pin_code(dialog->get_Pin_code());
-    }
+//    if (dialog->exec() == QDialog::Accepted) {
+//        credit.set_pin_code(dialog->get_Pin_code());
+//    }
 }
 
 double Client_class::get_Money() const
 {
     return Money;
+}
+
+Credit_card_class Client_class::credit_card()
+{
+    return this->credit;
 }
 
 

@@ -16,6 +16,8 @@ public:
 
     double get_money_status() const;
     virtual void transfer(QString destination, double value) = 0;
+
+    std::vector<Client_class> get_clients();
 };
 
 

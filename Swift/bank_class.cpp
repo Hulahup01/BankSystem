@@ -14,6 +14,11 @@ double Bank_class::get_money_status() const{
     return money_status;
 }
 
+std::vector<Client_class> Bank_class::get_clients()
+{
+    return this->clients;
+}
+
 void Bank_class::transfer(QString destination, double value) {
 
     Q_UNUSED(destination);

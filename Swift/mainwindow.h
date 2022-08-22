@@ -22,6 +22,7 @@ public:
 
     bool select_bank();
     bool select_client();
+    PriorBank get_proirbank();
 
 private slots:
     void on_pushButton_clicked();
@@ -29,9 +30,12 @@ private slots:
     void on_pushButton_2_clicked();
 
 
+    void on_pushButton_3_clicked();
+
 private:
     Ui::MainWindow *ui;
 
     Transfer_card* trans_card_window;
+    PriorBank* priorbank;
 };
 #endif // MAINWINDOW_H
