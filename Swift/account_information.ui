@@ -1,0 +1,953 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Account_information</class>
+ <widget class="QDialog" name="Account_information">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1150</width>
+    <height>330</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QWidget" name="gridLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>65</y>
+     <width>231</width>
+     <height>108</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout_FullName">
+    <item row="1" column="1">
+     <widget class="QLineEdit" name="lineEdit_firstName">
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);
+selection-color: rgb(3, 224, 249);
+selection-background-color: rgb(3, 224, 249);
+gridline-color: rgb(25, 83, 117);
+border-color: rgb(25, 83, 117);
+background-color: rgb(25, 83, 117);</string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QLabel" name="label_secondName">
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(37, 123, 174);</string>
+      </property>
+      <property name="text">
+       <string>Second name</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QLineEdit" name="lineEdit_lastName">
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);
+selection-color: rgb(3, 224, 249);
+selection-background-color: rgb(3, 224, 249);
+gridline-color: rgb(25, 83, 117);
+border-color: rgb(25, 83, 117);
+background-color: rgb(25, 83, 117);</string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="label_firstName">
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(37, 123, 174);</string>
+      </property>
+      <property name="text">
+       <string>First name</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QLineEdit" name="lineEdit_secondName">
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);
+selection-color: rgb(3, 224, 249);
+selection-background-color: rgb(3, 224, 249);
+gridline-color: rgb(25, 83, 117);
+border-color: rgb(25, 83, 117);
+background-color: rgb(25, 83, 117);</string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QLabel" name="label_lastName">
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(37, 123, 174);</string>
+      </property>
+      <property name="text">
+       <string>Last name</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+   <zorder>lineEdit_secondName</zorder>
+   <zorder>lineEdit_firstName</zorder>
+   <zorder>lineEdit_lastName</zorder>
+   <zorder>label_secondName</zorder>
+   <zorder>label_firstName</zorder>
+   <zorder>label_lastName</zorder>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_pinCode">
+   <property name="geometry">
+    <rect>
+     <x>400</x>
+     <y>200</y>
+     <width>91</width>
+     <height>35</height>
+    </rect>
+   </property>
+   <property name="sizeIncrement">
+    <size>
+     <width>0</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>26</pointsize>
+     <italic>false</italic>
+     <bold>false</bold>
+     <kerning>true</kerning>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);
+selection-color: rgb(3, 224, 249);
+selection-background-color: rgb(3, 224, 249);
+gridline-color: rgb(25, 83, 117);
+border-color: rgb(25, 83, 117);
+background-color: rgb(25, 83, 117);</string>
+   </property>
+   <property name="maxLength">
+    <number>4</number>
+   </property>
+   <property name="frame">
+    <bool>false</bool>
+   </property>
+   <property name="echoMode">
+    <enum>QLineEdit::Password</enum>
+   </property>
+   <property name="cursorPosition">
+    <number>0</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_pinCode_png">
+   <property name="geometry">
+    <rect>
+     <x>400</x>
+     <y>120</y>
+     <width>91</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>pin-code.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_money">
+   <property name="geometry">
+    <rect>
+     <x>350</x>
+     <y>130</y>
+     <width>131</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:rgb(255,255,255);</string>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_logo_png">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>120</width>
+     <height>48</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>logo.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_card_png">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>120</y>
+     <width>301</width>
+     <height>181</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>credit_card(receiver).png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+   <property name="wordWrap">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_SignIn">
+   <property name="geometry">
+    <rect>
+     <x>405</x>
+     <y>270</y>
+     <width>83</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>9</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::StrongFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);
+border-color: rgb(25, 83, 117);
+background-color: rgb(25, 83, 117);</string>
+   </property>
+   <property name="text">
+    <string>Sign in</string>
+   </property>
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QWidget" name="gridLayoutWidget_2">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>185</y>
+     <width>151</width>
+     <height>116</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout_Adress">
+    <item row="0" column="1">
+     <widget class="QLineEdit" name="lineEdit_city">
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);
+selection-color: rgb(3, 224, 249);
+selection-background-color: rgb(3, 224, 249);
+gridline-color: rgb(25, 83, 117);
+border-color: rgb(25, 83, 117);
+background-color: rgb(25, 83, 117);</string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QLineEdit" name="lineEdit_flat">
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);
+selection-color: rgb(3, 224, 249);
+selection-background-color: rgb(3, 224, 249);
+gridline-color: rgb(25, 83, 117);
+border-color: rgb(25, 83, 117);
+background-color: rgb(25, 83, 117);</string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QLineEdit" name="lineEdit_street">
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);
+selection-color: rgb(3, 224, 249);
+selection-background-color: rgb(3, 224, 249);
+gridline-color: rgb(25, 83, 117);
+border-color: rgb(25, 83, 117);
+background-color: rgb(25, 83, 117);</string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QLineEdit" name="lineEdit_house">
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);
+selection-color: rgb(3, 224, 249);
+selection-background-color: rgb(3, 224, 249);
+gridline-color: rgb(25, 83, 117);
+border-color: rgb(25, 83, 117);
+background-color: rgb(25, 83, 117);</string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QLabel" name="label_city">
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(37, 123, 174);</string>
+      </property>
+      <property name="text">
+       <string>City</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="label_street">
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(37, 123, 174);</string>
+      </property>
+      <property name="text">
+       <string>Street</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QLabel" name="label_house">
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(37, 123, 174);</string>
+      </property>
+      <property name="text">
+       <string>House</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QLabel" name="label_flat">
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(37, 123, 174);</string>
+      </property>
+      <property name="text">
+       <string>Flat</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QPushButton" name="pushButton_Close">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>270</y>
+     <width>83</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>9</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="mouseTracking">
+    <bool>false</bool>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::StrongFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);
+border-color: rgb(25, 83, 117);
+background-color: rgb(25, 83, 117);</string>
+   </property>
+   <property name="text">
+    <string>Close</string>
+   </property>
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_cardNumber_info">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>180</y>
+     <width>151</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);
+selection-color: rgb(3, 224, 249);
+selection-background-color: rgb(3, 224, 249);
+gridline-color: rgb(25, 83, 117);
+border-color: rgb(25, 83, 117);
+background-color: rgb(25, 83, 117);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="frame">
+    <bool>false</bool>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_bankLogo_png">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>60</y>
+     <width>81</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>bankLogo.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QDateEdit" name="dateEdit_cardDate_info">
+   <property name="geometry">
+    <rect>
+     <x>400</x>
+     <y>205</y>
+     <width>41</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::WheelFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 10pt &quot;Segoe UI&quot;;
+color: rgb(255, 255, 255);
+selection-color: rgb(3, 224, 249);
+selection-background-color: rgb(3, 224, 249);
+selection-color: rgb(25, 83, 117);
+gridline-color: rgb(25, 83, 117);
+border-color: rgb(25, 83, 117);
+background-color: rgb(25, 83, 117);</string>
+   </property>
+   <property name="inputMethodHints">
+    <set>Qt::ImhPreferNumbers</set>
+   </property>
+   <property name="wrapping">
+    <bool>false</bool>
+   </property>
+   <property name="frame">
+    <bool>false</bool>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+   <property name="accelerated">
+    <bool>false</bool>
+   </property>
+   <property name="correctionMode">
+    <enum>QAbstractSpinBox::CorrectToPreviousValue</enum>
+   </property>
+   <property name="showGroupSeparator" stdset="0">
+    <bool>false</bool>
+   </property>
+   <property name="dateTime">
+    <datetime>
+     <hour>0</hour>
+     <minute>0</minute>
+     <second>0</second>
+     <year>2022</year>
+     <month>10</month>
+     <day>14</day>
+    </datetime>
+   </property>
+   <property name="maximumDateTime">
+    <datetime>
+     <hour>23</hour>
+     <minute>59</minute>
+     <second>59</second>
+     <year>2032</year>
+     <month>12</month>
+     <day>31</day>
+    </datetime>
+   </property>
+   <property name="minimumDateTime">
+    <datetime>
+     <hour>0</hour>
+     <minute>0</minute>
+     <second>0</second>
+     <year>2022</year>
+     <month>10</month>
+     <day>14</day>
+    </datetime>
+   </property>
+   <property name="minimumDate">
+    <date>
+     <year>2022</year>
+     <month>10</month>
+     <day>14</day>
+    </date>
+   </property>
+   <property name="displayFormat">
+    <string>MM/yy</string>
+   </property>
+   <property name="calendarPopup">
+    <bool>false</bool>
+   </property>
+   <property name="currentSectionIndex">
+    <number>0</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_bankName">
+   <property name="geometry">
+    <rect>
+     <x>440</x>
+     <y>80</y>
+     <width>91</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:rgb(255,255,255);</string>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBox_chooseBank">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>80</y>
+     <width>211</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 13pt &quot;Segoe UI&quot;;
+color: rgb(255, 255, 255);
+gridline-color: rgb(25, 83, 117);
+border-color: rgb(25, 83, 117);
+background-color: rgb(25, 83, 117);
+</string>
+   </property>
+   <item>
+    <property name="text">
+     <string>Priorbank</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Alfabank</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Belarusbank</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_cardNumber">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>200</y>
+     <width>241</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 19pt &quot;Segoe UI&quot;;
+color: rgb(255, 255, 255);
+selection-color: rgb(3, 224, 249);
+selection-background-color: rgb(3, 224, 249);
+gridline-color: rgb(25, 83, 117);
+border-color: rgb(25, 83, 117);
+background-color: rgb(25, 83, 117);</string>
+   </property>
+   <property name="maxLength">
+    <number>19</number>
+   </property>
+   <property name="frame">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_SignOut">
+   <property name="geometry">
+    <rect>
+     <x>405</x>
+     <y>270</y>
+     <width>83</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>9</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::StrongFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);
+border-color: rgb(25, 83, 117);
+background-color: rgb(25, 83, 117);</string>
+   </property>
+   <property name="text">
+    <string>Sign out</string>
+   </property>
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="date_label_3">
+   <property name="geometry">
+    <rect>
+     <x>110</x>
+     <y>260</y>
+     <width>41</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);
+font: 7pt &quot;Segoe UI&quot;;</string>
+   </property>
+   <property name="text">
+    <string>THRU</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_cardInfo_png">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>65</y>
+     <width>281</width>
+     <height>171</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>credit_card(receiver).png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QDateEdit" name="dateEdit_cardDate">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>255</y>
+     <width>51</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::WheelFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 13pt &quot;Segoe UI&quot;;
+color: rgb(255, 255, 255);
+selection-color: rgb(3, 224, 249);
+selection-background-color: rgb(3, 224, 249);
+selection-color: rgb(25, 83, 117);
+gridline-color: rgb(25, 83, 117);
+border-color: rgb(25, 83, 117);
+background-color: rgb(25, 83, 117);</string>
+   </property>
+   <property name="inputMethodHints">
+    <set>Qt::ImhPreferNumbers</set>
+   </property>
+   <property name="wrapping">
+    <bool>false</bool>
+   </property>
+   <property name="frame">
+    <bool>false</bool>
+   </property>
+   <property name="readOnly">
+    <bool>false</bool>
+   </property>
+   <property name="accelerated">
+    <bool>false</bool>
+   </property>
+   <property name="correctionMode">
+    <enum>QAbstractSpinBox::CorrectToPreviousValue</enum>
+   </property>
+   <property name="showGroupSeparator" stdset="0">
+    <bool>false</bool>
+   </property>
+   <property name="dateTime">
+    <datetime>
+     <hour>0</hour>
+     <minute>0</minute>
+     <second>0</second>
+     <year>2022</year>
+     <month>10</month>
+     <day>14</day>
+    </datetime>
+   </property>
+   <property name="maximumDateTime">
+    <datetime>
+     <hour>23</hour>
+     <minute>59</minute>
+     <second>59</second>
+     <year>2032</year>
+     <month>12</month>
+     <day>31</day>
+    </datetime>
+   </property>
+   <property name="minimumDateTime">
+    <datetime>
+     <hour>0</hour>
+     <minute>0</minute>
+     <second>0</second>
+     <year>2022</year>
+     <month>10</month>
+     <day>14</day>
+    </datetime>
+   </property>
+   <property name="minimumDate">
+    <date>
+     <year>2022</year>
+     <month>10</month>
+     <day>14</day>
+    </date>
+   </property>
+   <property name="displayFormat">
+    <string>MM/yy</string>
+   </property>
+   <property name="calendarPopup">
+    <bool>false</bool>
+   </property>
+   <property name="currentSectionIndex">
+    <number>0</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="date_label_1">
+   <property name="geometry">
+    <rect>
+     <x>110</x>
+     <y>250</y>
+     <width>41</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);
+font: 7pt &quot;Segoe UI&quot;;</string>
+   </property>
+   <property name="text">
+    <string>VALID</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_Refresh">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>135</y>
+     <width>25</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);
+border-color: rgb(25, 83, 117);
+background-color: rgb(25, 83, 117);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>refresh.png</normaloff>refresh.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>20</width>
+     <height>20</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_incorrectData">
+   <property name="geometry">
+    <rect>
+     <x>408</x>
+     <y>250</y>
+     <width>81</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 0, 17);</string>
+   </property>
+   <property name="text">
+    <string>Incorrect data</string>
+   </property>
+  </widget>
+  <zorder>label_cardInfo_png</zorder>
+  <zorder>gridLayoutWidget</zorder>
+  <zorder>lineEdit_pinCode</zorder>
+  <zorder>label_pinCode_png</zorder>
+  <zorder>label_money</zorder>
+  <zorder>label_logo_png</zorder>
+  <zorder>label_card_png</zorder>
+  <zorder>pushButton_SignIn</zorder>
+  <zorder>gridLayoutWidget_2</zorder>
+  <zorder>pushButton_Close</zorder>
+  <zorder>lineEdit_cardNumber_info</zorder>
+  <zorder>label_bankLogo_png</zorder>
+  <zorder>dateEdit_cardDate_info</zorder>
+  <zorder>label_bankName</zorder>
+  <zorder>comboBox_chooseBank</zorder>
+  <zorder>lineEdit_cardNumber</zorder>
+  <zorder>pushButton_SignOut</zorder>
+  <zorder>date_label_3</zorder>
+  <zorder>dateEdit_cardDate</zorder>
+  <zorder>date_label_1</zorder>
+  <zorder>pushButton_Refresh</zorder>
+  <zorder>label_incorrectData</zorder>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
