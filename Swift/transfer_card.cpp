@@ -1,13 +1,14 @@
 #include "transfer_card.h"
 #include "ui_transfer_card.h"
 
-Transfer_card::Transfer_card(QWidget *parent) :
-    QWidget(parent),
+Transfer_card::Transfer_card(QDialog *parent) :
+    QDialog(parent),
     ui(new Ui::Transfer_card)
 {
     ui->setupUi(this);
     setWindowTitle("Swift. Transfer from card to card");
     setFixedSize(575, 330);
+    setModal(true);
 
     set_credit_card_img();
     create_step_1_window();
@@ -37,6 +38,11 @@ void Transfer_card::create_step_1_window()
     ui->date_edit_2->hide();
     ui->card_numb_edit_2->hide();
     ui->label->hide();
+
+    ui->invalid_name_sender_label->hide();
+    ui->invalid_date_sender_label->hide();
+    ui->invalid_number_sender_label->hide();
+    ui->invalid_cvv_sender_label->hide();
 
     ui->cvv_edit->clear();
     ui->card_holder_edit->clear();
@@ -76,22 +82,60 @@ void Transfer_card::on_step_1_button_clicked()
 //        qDebug() << i.credit_card().get_cvv_code();
 //        qDebug() << i.credit_card().get_card_numb();    // Test completed!!!
 //    }
-    create_step_2_window();
+    if(sender_data_check())
+        create_step_2_window();
+    else
+        qDebug() << "No!";
+}
+
+bool Transfer_card::sender_data_check()
+{
+    if(sender_card_numb_check() && sender_month_year_check())
+        return 1;
+}
+
+bool Transfer_card::sender_card_numb_check()
+{
+    bool isCorrect(false);
+
+    for(auto i : priorbank->get_clients()){
+        if(get_card_numb(ui->card_numb_edit->text()) == i.credit_card().get_card_numb())
+            isCorrect = true;
+    }
+
+    if(isCorrect)
+        return 1;
+    else{
+        ui->card_numb_edit->clear();
+        ui->invalid_number_sender_label->show();
+        return 0;
+    }
+}
+
+bool Transfer_card::sender_month_year_check()
+{
+    bool isCorrect(false);
+
+    for(auto i : priorbank->get_clients()){
+        if(get_date(ui->date_edit->text()) == i.credit_card().get_date())
+            isCorrect = true;
+    }
+
+    if(isCorrect)
+        return 1;
+    else{
+        ui->date_edit->setDate(QDate::currentDate());
+        ui->invalid_date_sender_label->show();
+        return 0;
+    }
 }
 
 void Transfer_card::create_step_2_window()
 {
-    this->card_numb = get_card_numb(ui->card_numb_edit->text());
+//    this->card_numb = get_card_numb(ui->card_numb_edit->text());
 //    this->month_year_from = ui->date_edit->text();
 //    this->card_owner = ui->holder_name_edit->text();
 //    this->cvv_code = ui->cvv_edit->text();
-
-    QString temp;
-    for(auto i : priorbank->get_clients()){
-        temp = i.credit_card().get_card_numb();
-    }
-    if(this->card_numb == temp)
-        qDebug() << "correct!";
 
     ui->step_1_label->hide();
     ui->step_1_button->hide();
@@ -105,6 +149,10 @@ void Transfer_card::create_step_2_window()
     ui->card_numb_edit->hide();
     ui->date_edit->hide();
     ui->label->hide();
+    ui->invalid_cvv_sender_label->hide();
+    ui->invalid_date_sender_label->hide();
+    ui->invalid_name_sender_label->hide();
+    ui->invalid_number_sender_label->hide();
 
     ui->card_numb_edit_2->clear();
     ui->date_edit_2->setDate(QDate::currentDate());
@@ -152,8 +200,8 @@ void Transfer_card::on_step_3_button_clicked()
 {
     create_step_1_window();
 
-    QString fname =  QFileDialog::getExistingDirectory(this, tr("Open Directory"),
-    "/home",QFileDialog::ShowDirsOnly| QFileDialog::DontResolveSymlinks)+"/receipt.txt";
+   // QString fname =  QFileDialog::getExistingDirectory(this, tr("Open Directory"),
+   // "/home",QFileDialog::ShowDirsOnly| QFileDialog::DontResolveSymlinks)+"/receipt.txt";
 
     hide();
 }
@@ -174,6 +222,25 @@ QString Transfer_card::get_card_numb(const QString card_numb)
         if(i != ' ')
             result += i;
     }
+
+    return result;
+}
+
+QString Transfer_card::get_date(const QString date)
+{
+    QString result;
+    for(auto i : date){
+        if(i != '/')
+            result += i;
+    }
+
+    QString::iterator it = result.begin();
+    QString::iterator it2 = it + 1;
+
+    if(*it == '0')
+        result.erase(it, it2);
+
+    qDebug() << result;
 
     return result;
 }

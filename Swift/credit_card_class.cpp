@@ -36,6 +36,11 @@ QString Credit_card_class::get_cvv_code() const{
     return QString::fromStdString(this->cvv_code);
 }
 
+QString Credit_card_class::get_date()
+{
+    return QString::number(month) + QString::number(year);
+}
+
 void Credit_card_class::set_pin_code(QString pin_code)
 {
     this->pin_code = pin_code;

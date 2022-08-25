@@ -12,22 +12,29 @@ namespace Ui {
 class Transfer_card;
 }
 
-class Transfer_card : public QWidget
+class Transfer_card : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit Transfer_card(QWidget *parent = nullptr);
+    explicit Transfer_card(QDialog *parent = nullptr);
     ~Transfer_card();
 
     void set_priorbank(PriorBank* priorbank);
     QString get_card_numb(const QString card_numb);
+    QString get_date(const QString date);
 
     void set_button_style();
     void set_credit_card_img();
     void create_step_1_window();
     void create_step_2_window();
     void create_step_3_window();
+
+    bool sender_data_check();
+    bool sender_card_numb_check();
+    bool sender_month_year_check();
+    bool sender_card_holder_check();
+    bool sender_cvv_code_check();
 
 
 

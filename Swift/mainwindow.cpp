@@ -66,6 +66,10 @@ void MainWindow::on_pushButton_3_clicked()
      for(auto i : priorbank->get_clients()){
          qDebug() << i.credit_card().get_card_numb();
      }
+
+     for(auto i : priorbank->get_clients()){
+         qDebug() << i.credit_card().get_date();
+     }
 }
 
 

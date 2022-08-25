@@ -22,6 +22,7 @@ public:
 
     QString get_card_numb() const;
     QString get_cvv_code() const;
+    QString get_date();
     void set_pin_code(QString pin_code);
 };
 
