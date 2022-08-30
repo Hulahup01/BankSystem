@@ -7,7 +7,7 @@
 static void issue_a_receipt(QString txt_Directory, QString bank_name, QString adress, QString contact_details, QDateTime transaction_date,
                             QString senders_card, QString recipients_card, double transfer_amount, double commission, QString currency){
 
-    QString text_receipt = "                         RECEIPT                         \n"
+    QString text_receipt = "\n\n                         RECEIPT                         \n"
                            "*********************************************************\n";
 
 

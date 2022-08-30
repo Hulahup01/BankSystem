@@ -2,12 +2,14 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QLayout>
 #include "credit_card_class.h"
 #include "client_class.h"
 #include "bank_class.h"
 #include "priorbank.h"
 #include "transfer_card.h"
 #include "account_information.h"
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -23,19 +25,17 @@ public:
 
     bool select_bank();
     bool select_client();
-    PriorBank get_proirbank();
+
+    void create_banks();
+
+    void create_main_ui();
 
 private slots:
-    void on_pushButton_clicked();
-
     void on_pushButton_2_clicked();
 
     void on_pushButton_3_clicked();
 
-    void on_pushButton_4_clicked();
-
     void on_pushButton_Dialog_AccountInformation_clicked();
-
 
 public slots:
     void slot_CheckData_Account_Information(QString, QString, QString, short int, short int);
@@ -52,8 +52,6 @@ signals:
 
     void signal_Send_Money_Status_Account_Information(double);
 
-
-
 private:
     Ui::MainWindow *ui;
 
@@ -62,5 +60,7 @@ private:
     Account_information* account_information_window;
 
     PriorBank* priorbank;
+    AlphaBank* alphabank;
+    BelarusBank* belarusbank;
 };
 #endif // MAINWINDOW_H

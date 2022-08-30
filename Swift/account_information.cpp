@@ -132,7 +132,7 @@ void Account_information::hide_info_page()
 
 void Account_information::on_lineEdit_cardNumber_textChanged(const QString &arg1)
 {
-    if(LenghtCardNumberAccount>arg1.length()&&(arg1.length()==5||arg1.length()==10||arg1.length()==15)){QString temp  = arg1; temp.chop(2); ui->lineEdit_cardNumber->setText(temp);}
+    if(LenghtCardNumberAccount>arg1.length()&&(arg1.length()==5||arg1.length()==10||arg1.length()==15)){QString temp  = arg1; temp.chop(1); ui->lineEdit_cardNumber->setText(temp);}
 
     if(arg1.length()==4){ ui->lineEdit_cardNumber->setText(arg1+" ");}
     else if(arg1.length()==9){ ui->lineEdit_cardNumber->setText(arg1+" ");}

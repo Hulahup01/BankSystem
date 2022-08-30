@@ -22,6 +22,9 @@
      <height>29</height>
     </rect>
    </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
    <property name="focusPolicy">
     <enum>Qt::StrongFocus</enum>
    </property>
@@ -69,7 +72,7 @@ background-color: rgb(25, 83, 117);</string>
   <widget class="QLineEdit" name="cvv_edit">
    <property name="geometry">
     <rect>
-     <x>380</x>
+     <x>400</x>
      <y>180</y>
      <width>51</width>
      <height>31</height>
@@ -78,18 +81,20 @@ background-color: rgb(25, 83, 117);</string>
    <property name="styleSheet">
     <string notr="true">font: 19pt &quot;Segoe UI&quot;;
 color: rgb(255, 255, 255);
-selection-color: rgb(3, 224, 249);
-selection-background-color: rgb(3, 224, 249);
-selection-color: rgb(25, 83, 117);
-gridline-color: rgb(25, 83, 117);
 border-color: rgb(25, 83, 117);
 background-color: rgb(25, 83, 117);</string>
+   </property>
+   <property name="text">
+    <string/>
    </property>
    <property name="maxLength">
     <number>3</number>
    </property>
    <property name="frame">
     <bool>false</bool>
+   </property>
+   <property name="echoMode">
+    <enum>QLineEdit::Normal</enum>
    </property>
   </widget>
   <widget class="QPushButton" name="step_2_button">
@@ -100,6 +105,9 @@ background-color: rgb(25, 83, 117);</string>
      <width>83</width>
      <height>29</height>
     </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
    </property>
    <property name="text">
     <string>Next</string>
@@ -113,6 +121,9 @@ background-color: rgb(25, 83, 117);</string>
      <width>83</width>
      <height>29</height>
     </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
    </property>
    <property name="text">
     <string>Confirm</string>
@@ -269,20 +280,17 @@ font: 7pt &quot;Segoe UI&quot;;</string>
    <property name="styleSheet">
     <string notr="true">font: 18pt &quot;Segoe UI&quot;;
 color: rgb(255, 255, 255);
-selection-color: rgb(3, 224, 249);
-selection-background-color: rgb(3, 224, 249);
-gridline-color: rgb(25, 83, 117);
 border-color: rgb(25, 83, 117);
 background-color: rgb(25, 83, 117);</string>
    </property>
    <property name="inputMethodHints">
     <set>Qt::ImhDigitsOnly</set>
    </property>
-   <property name="inputMask">
-    <string>xxxx   xxxx   xxxx   xxxx</string>
-   </property>
    <property name="text">
-    <string>         </string>
+    <string/>
+   </property>
+   <property name="maxLength">
+    <number>25</number>
    </property>
    <property name="frame">
     <bool>false</bool>
@@ -297,7 +305,7 @@ background-color: rgb(25, 83, 117);</string>
     <bool>true</bool>
    </property>
    <property name="placeholderText">
-    <string> XXXX   XXXX   XXXX   XXXX</string>
+    <string>XXXX   XXXX   XXXX   XXXX</string>
    </property>
    <property name="cursorMoveStyle">
     <enum>Qt::LogicalMoveStyle</enum>
@@ -390,8 +398,8 @@ background-color: rgb(25, 83, 117);</string>
   <widget class="QLabel" name="cvv_label">
    <property name="geometry">
     <rect>
-     <x>350</x>
-     <y>183</y>
+     <x>370</x>
+     <y>180</y>
      <width>21</width>
      <height>21</height>
     </rect>
@@ -617,74 +625,370 @@ color: rgb(0, 0, 0);</string>
     <string>Transfer from card to card</string>
    </property>
   </widget>
-  <widget class="QLabel" name="invalid_number_sender_label">
+  <widget class="QLabel" name="required_number_sender_label">
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>192</y>
-     <width>121</width>
+     <y>195</y>
+     <width>16</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 0, 17);
+
+font: 13pt &quot;Segoe UI&quot;;</string>
+   </property>
+   <property name="text">
+    <string>*</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="required_date_sender_label">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>246</y>
+     <width>16</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 0, 17);
+font: 13pt &quot;Segoe UI&quot;;</string>
+   </property>
+   <property name="text">
+    <string>*</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="required_cvv_sender_label">
+   <property name="geometry">
+    <rect>
+     <x>400</x>
+     <y>164</y>
+     <width>16</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 0, 17);
+font: 13pt &quot;Segoe UI&quot;;</string>
+   </property>
+   <property name="text">
+    <string>*</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="invalid_or_empty_label">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>270</y>
+     <width>181</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 0, 4);</string>
+   </property>
+   <property name="text">
+    <string>* - invalid or empty field</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="required_name_sender_label">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>260</y>
+     <width>16</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 0, 17);
+font: 12pt &quot;Segoe UI&quot;;</string>
+   </property>
+   <property name="text">
+    <string>*</string>
+   </property>
+  </widget>
+  <widget class="QDoubleSpinBox" name="gift_no_perc">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>210</y>
+     <width>161</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="maximum">
+    <double>10000000.000000000000000</double>
+   </property>
+  </widget>
+  <widget class="QLabel" name="gift_perc">
+   <property name="geometry">
+    <rect>
+     <x>312</x>
+     <y>290</y>
+     <width>91</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 12pt &quot;Segoe UI&quot;;
+font: 700 9pt &quot;Segoe UI&quot;;
+color: rgb(0, 0, 0);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="required_number_sender_label_2">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>137</y>
+     <width>20</width>
      <height>16</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: rgb(255, 0, 17);</string>
+    <string notr="true">color: rgb(255, 0, 17);
+
+font: 13pt &quot;Segoe UI&quot;;</string>
    </property>
    <property name="text">
-    <string>invalid number</string>
+    <string>*</string>
    </property>
   </widget>
-  <widget class="QLabel" name="invalid_date_sender_label">
+  <widget class="QLabel" name="required_date_sender_label_2">
    <property name="geometry">
     <rect>
-     <x>150</x>
+     <x>280</x>
+     <y>180</y>
+     <width>20</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 0, 17);
+font: 13pt &quot;Segoe UI&quot;;</string>
+   </property>
+   <property name="text">
+    <string>*</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="step_3_label_2">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>60</y>
+     <width>121</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 11pt &quot;Segoe UI&quot;;
+color: rgb(0, 0, 0);</string>
+   </property>
+   <property name="text">
+    <string>Validity period</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="step_3_label_3">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>40</y>
+     <width>131</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 11pt &quot;Segoe UI&quot;;
+color: rgb(0, 0, 0);</string>
+   </property>
+   <property name="text">
+    <string>Recipient`s card</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="step_3_label_4">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>110</y>
+     <width>151</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 11pt &quot;Segoe UI&quot;;
+color: rgb(0, 0, 0);</string>
+   </property>
+   <property name="text">
+    <string>Card for operation</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="step_3_label_5">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>130</y>
+     <width>121</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 11pt &quot;Segoe UI&quot;;
+color: rgb(0, 0, 0);</string>
+   </property>
+   <property name="text">
+    <string>Validity period</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="step_3_label_6">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>190</y>
+     <width>111</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>transfer amount</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="step_3_label_7">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
      <y>240</y>
-     <width>91</width>
+     <width>81</width>
      <height>20</height>
     </rect>
    </property>
-   <property name="styleSheet">
-    <string notr="true">color: rgb(255, 0, 17);</string>
-   </property>
    <property name="text">
-    <string>invalid date</string>
+    <string>transfer fee</string>
    </property>
   </widget>
-  <widget class="QLabel" name="invalid_name_sender_label">
+  <widget class="QLabel" name="step_3_label_8">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>256</y>
-     <width>91</width>
+     <x>180</x>
+     <y>290</y>
+     <width>131</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>amount to pe paid</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="step_3_label_9">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>40</y>
+     <width>141</width>
      <height>20</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: rgb(255, 0, 17);</string>
+    <string notr="true">font: 14pt &quot;Segoe UI&quot;;
+font: 700 9pt &quot;Segoe UI&quot;;
+color: rgb(0, 0, 0);</string>
    </property>
    <property name="text">
-    <string>invalid name</string>
+    <string/>
    </property>
   </widget>
-  <widget class="QLabel" name="invalid_cvv_sender_label">
+  <widget class="QLabel" name="step_3_label_10">
    <property name="geometry">
     <rect>
      <x>380</x>
-     <y>160</y>
-     <width>101</width>
+     <y>60</y>
+     <width>51</width>
      <height>20</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: rgb(255, 0, 17);</string>
+    <string notr="true">font: 14pt &quot;Segoe UI&quot;;
+font: 700 9pt &quot;Segoe UI&quot;;
+color: rgb(0, 0, 0);</string>
    </property>
    <property name="text">
-    <string>invalid cvv</string>
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="step_3_label_11">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>110</y>
+     <width>141</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 14pt &quot;Segoe UI&quot;;
+font: 700 9pt &quot;Segoe UI&quot;;
+color: rgb(0, 0, 0);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="step_3_label_12">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>130</y>
+     <width>51</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 14pt &quot;Segoe UI&quot;;
+font: 700 9pt &quot;Segoe UI&quot;;
+color: rgb(0, 0, 0);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="step_3_fee_label">
+   <property name="geometry">
+    <rect>
+     <x>330</x>
+     <y>240</y>
+     <width>63</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 12pt &quot;Segoe UI&quot;;
+font: 700 9pt &quot;Segoe UI&quot;;
+color: rgb(0, 0, 0);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="checkBox">
+   <property name="geometry">
+    <rect>
+     <x>470</x>
+     <y>260</y>
+     <width>121</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>get a receipt</string>
    </property>
   </widget>
   <zorder>step_1_img</zorder>
   <zorder>step_3_button</zorder>
   <zorder>card_holder_edit</zorder>
-  <zorder>cvv_edit</zorder>
   <zorder>step_2_button</zorder>
   <zorder>header_label</zorder>
   <zorder>step_3_label</zorder>
@@ -702,11 +1006,30 @@ color: rgb(0, 0, 0);</string>
   <zorder>date_label_4</zorder>
   <zorder>date_label_5</zorder>
   <zorder>label</zorder>
-  <zorder>invalid_number_sender_label</zorder>
-  <zorder>invalid_name_sender_label</zorder>
-  <zorder>invalid_date_sender_label</zorder>
-  <zorder>invalid_cvv_sender_label</zorder>
+  <zorder>required_number_sender_label</zorder>
+  <zorder>required_cvv_sender_label</zorder>
+  <zorder>required_date_sender_label</zorder>
   <zorder>cvv_label</zorder>
+  <zorder>invalid_or_empty_label</zorder>
+  <zorder>required_name_sender_label</zorder>
+  <zorder>cvv_edit</zorder>
+  <zorder>gift_no_perc</zorder>
+  <zorder>gift_perc</zorder>
+  <zorder>required_number_sender_label_2</zorder>
+  <zorder>required_date_sender_label_2</zorder>
+  <zorder>step_3_label_2</zorder>
+  <zorder>step_3_label_3</zorder>
+  <zorder>step_3_label_4</zorder>
+  <zorder>step_3_label_5</zorder>
+  <zorder>step_3_label_6</zorder>
+  <zorder>step_3_label_7</zorder>
+  <zorder>step_3_label_8</zorder>
+  <zorder>step_3_label_9</zorder>
+  <zorder>step_3_label_10</zorder>
+  <zorder>step_3_label_11</zorder>
+  <zorder>step_3_label_12</zorder>
+  <zorder>step_3_fee_label</zorder>
+  <zorder>checkBox</zorder>
  </widget>
  <resources/>
  <connections/>

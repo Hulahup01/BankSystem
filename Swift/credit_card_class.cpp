@@ -19,7 +19,6 @@ void Credit_card_class::generate_month_year()
 {
     this->month = rand() % 12 + 1;
     this->year = rand() % 5 + 23;
-    qDebug() <<  month << ", " << year;
 }
 
 void Credit_card_class::generate_cvv_code(){

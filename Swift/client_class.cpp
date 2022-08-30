@@ -21,6 +21,11 @@ double Client_class::get_Money() const
     return Money;
 }
 
+void Client_class::set_Money(const double money)
+{
+    this->Money += money;
+}
+
 Credit_card_class Client_class::credit_card()
 {
     return this->credit;

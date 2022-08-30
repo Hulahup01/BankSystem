@@ -1,20 +1,31 @@
 #include "bank_class.h"
 
-Bank_class::Bank_class(const double percent) : percent(percent)
+Bank_class::Bank_class(const double percent_in, const double percent_out)
+    : percent_in(percent_in), percent_out(percent_out), bank_status(0)
 {
 
 }
 
 double Bank_class::get_money_status() const{
-    double money_status = 0;
-
-    for(auto i : clients)
-        money_status += i.get_Money();
-
-    return money_status;
+    return this->bank_status;
 }
 
-std::vector<Client_class> Bank_class::get_clients()
+double Bank_class::get_percent_in() const
+{
+    return this->percent_in;
+}
+
+void Bank_class::send_to_bank(double value)
+{
+    this->bank_status += value;
+}
+
+double Bank_class::get_percent_out() const
+{
+    return this->percent_out;
+}
+
+std::vector<Client_class>& Bank_class::get_clients()
 {
     return this->clients;
 }

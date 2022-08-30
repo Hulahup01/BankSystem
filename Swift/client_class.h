@@ -31,6 +31,7 @@ public:
                  std::string City, std::string Street, int House, double Money, int Flat = 0);
 
     double get_Money() const;
+    void set_Money(const double money);
     Credit_card_class credit_card();
 
 };

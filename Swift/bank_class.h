@@ -8,16 +8,21 @@
 
 class Bank_class{
 protected:
-    const double percent;
+    const double percent_in;
+    const double percent_out;
+    double bank_status;
     std::vector<Client_class> clients;
 
 public:
-    Bank_class(const double percent);
+    Bank_class(const double percent_in, const double percent_out);
 
     double get_money_status() const;
     virtual void transfer(QString destination, double value) = 0;
+    virtual double get_percent_in() const;
+    virtual void send_to_bank(double value);
+    double get_percent_out() const;
 
-    std::vector<Client_class> get_clients();
+    std::vector<Client_class>& get_clients();
 };
 
 
