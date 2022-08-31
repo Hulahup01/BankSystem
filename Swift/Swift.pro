@@ -14,6 +14,7 @@ SOURCES += \
     bank_class.cpp \
     client_class.cpp \
     credit_card_class.cpp \
+    customlineedit.cpp \
     main.cpp \
     mainwindow.cpp \
     priorbank.cpp \
@@ -24,6 +25,7 @@ HEADERS += \
     bank_class.h \
     client_class.h \
     credit_card_class.h \
+    customlineedit.h \
     mainwindow.h \
     priorbank.h \
     receipt.h \

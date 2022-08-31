@@ -3,6 +3,8 @@
 
 #include <QDialog>
 #include <QDebug>
+#include "customlineedit.h"
+
 
 namespace Ui {
 class Account_information;
@@ -23,8 +25,6 @@ public:
 
 private slots:
 
-    void on_lineEdit_cardNumber_textChanged(const QString &arg1);
-
     void on_pushButton_SignIn_clicked();
 
     void on_pushButton_Close_clicked();
@@ -39,7 +39,7 @@ signals:
 
     void signal_SignOut_Account_Information();
 
-    void signal_RefreshMoney_Account_Information();
+    void signal_RefreshMoney_Account_Information(QString, QString, QString, short int, short int);
 
 public slots:
 
@@ -52,6 +52,7 @@ public slots:
 
 private:
     Ui::Account_information *ui;
+    CustomLineEdit *customLineEdit_Card_Number;
 };
 
 #endif // ACCOUNT_INFORMATION_H

@@ -17,9 +17,11 @@ private:
     void generate_card_numb();
     void generate_month_year();
     void generate_cvv_code();
+    void generate_pin_code();
 public:
     Credit_card_class(std::string last_name, std::string first_name);
 
+    QString get_pin_code() const;
     QString get_card_numb() const;
     QString get_cvv_code() const;
     QString get_date();

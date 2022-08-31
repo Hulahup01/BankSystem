@@ -274,6 +274,9 @@ background-color: rgb(25, 83, 117);</string>
      <bold>true</bold>
     </font>
    </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
    <property name="focusPolicy">
     <enum>Qt::StrongFocus</enum>
    </property>
@@ -450,6 +453,9 @@ background-color: rgb(25, 83, 117);</string>
      <pointsize>9</pointsize>
      <bold>true</bold>
     </font>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
    </property>
    <property name="mouseTracking">
     <bool>false</bool>
@@ -672,31 +678,6 @@ background-color: rgb(25, 83, 117);
     </property>
    </item>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_cardNumber">
-   <property name="geometry">
-    <rect>
-     <x>40</x>
-     <y>200</y>
-     <width>241</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">font: 19pt &quot;Segoe UI&quot;;
-color: rgb(255, 255, 255);
-selection-color: rgb(3, 224, 249);
-selection-background-color: rgb(3, 224, 249);
-gridline-color: rgb(25, 83, 117);
-border-color: rgb(25, 83, 117);
-background-color: rgb(25, 83, 117);</string>
-   </property>
-   <property name="maxLength">
-    <number>19</number>
-   </property>
-   <property name="frame">
-    <bool>false</bool>
-   </property>
-  </widget>
   <widget class="QPushButton" name="pushButton_SignOut">
    <property name="geometry">
     <rect>
@@ -711,6 +692,9 @@ background-color: rgb(25, 83, 117);</string>
      <pointsize>9</pointsize>
      <bold>true</bold>
     </font>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
    </property>
    <property name="focusPolicy">
     <enum>Qt::StrongFocus</enum>
@@ -885,6 +869,9 @@ font: 7pt &quot;Segoe UI&quot;;</string>
      <height>25</height>
     </rect>
    </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
    <property name="styleSheet">
     <string notr="true">color: rgb(255, 255, 255);
 border-color: rgb(25, 83, 117);
@@ -940,7 +927,6 @@ background-color: rgb(25, 83, 117);</string>
   <zorder>dateEdit_cardDate_info</zorder>
   <zorder>label_bankName</zorder>
   <zorder>comboBox_chooseBank</zorder>
-  <zorder>lineEdit_cardNumber</zorder>
   <zorder>pushButton_SignOut</zorder>
   <zorder>date_label_3</zorder>
   <zorder>dateEdit_cardDate</zorder>

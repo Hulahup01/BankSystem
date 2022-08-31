@@ -4,7 +4,13 @@ Credit_card_class::Credit_card_class(std::string last_name, std::string first_na
     generate_card_numb();
     generate_month_year();
     generate_cvv_code();
+    generate_pin_code();
     this->owner = last_name + ' ' + first_name;
+}
+
+QString Credit_card_class::get_pin_code() const
+{
+    return pin_code;
 }
 
 void Credit_card_class::generate_card_numb(){
@@ -24,6 +30,13 @@ void Credit_card_class::generate_month_year()
 void Credit_card_class::generate_cvv_code(){
     for(int i = 0; i < 3; i++){
         this->cvv_code += rand() % 10 + '0';
+    }
+}
+
+void Credit_card_class::generate_pin_code()
+{
+    for(int i = 0; i < 4; i++){
+        this->pin_code += QString::number(rand() % 10) ;
     }
 }
 
