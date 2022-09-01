@@ -13,7 +13,7 @@
 #include "credit_card_class.h"
 
 class Client_class{
-private:
+public:
     std::string Last_name;
     std::string First_name;
     std::string Second_name;
