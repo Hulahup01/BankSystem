@@ -11,6 +11,7 @@
 #include "account_information.h"
 
 
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -42,7 +43,7 @@ public slots:
 
     void slot_SignOut_Account_Information();
 
-    void slot_RefreshMoney_Account_Information();
+    void slot_RefreshMoney_Account_Information(QString, QString, QString, short int, short int);
 
 signals:
 

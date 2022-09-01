@@ -125,6 +125,7 @@ void MainWindow::on_pushButton_3_clicked()
          qDebug() << i.get_Money();
          qDebug() << i.credit_card().get_date();
          qDebug() << i.credit_card().get_cvv_code();
+         qDebug() << i.credit_card().get_pin_code();
          qDebug() << "*******************";
      }
 
@@ -135,6 +136,7 @@ void MainWindow::on_pushButton_3_clicked()
           qDebug() << i.get_Money();
           qDebug() << i.credit_card().get_date();
           qDebug() << i.credit_card().get_cvv_code();
+          qDebug() << i.credit_card().get_pin_code();
           qDebug() << "*******************";
       }
 
@@ -145,6 +147,7 @@ void MainWindow::on_pushButton_3_clicked()
            qDebug() << i.get_Money();
            qDebug() << i.credit_card().get_date();
            qDebug() << i.credit_card().get_cvv_code();
+           qDebug() << i.credit_card().get_pin_code();
            qDebug() << "*******************";
        }
 }
@@ -156,22 +159,51 @@ void MainWindow::on_pushButton_Dialog_AccountInformation_clicked()
 
 void MainWindow::slot_CheckData_Account_Information(QString bankName, QString cardNumber, QString pinCode, short int month, short int year)
 {
-    bool dataIsCorrect = true;
-    //проверка данных
-    // ...
-    // ...
-
-
-    // ======================= тест значения
-    QString lastName="FAMILIA";
-    QString firstName="IMYA";
-    QString secondName="OTCHESTVO";
-    QString city="GOROD";
-    QString street="YLICA";
-    int house = 1;
+    bool dataIsCorrect = false;
+    QString lastName;
+    QString firstName;
+    QString secondName;
+    QString city;
+    QString street;
+    int house=0;
     int flat=0;
-    double money=98.23;
-    // =======================
+    double money=0;
+    std::vector<Client_class> clients;
+
+    cardNumber.replace( " ", "" );
+
+    if(bankName == "Priorbank")
+    {
+        clients = priorbank->get_clients();
+    }
+    if(bankName == "Belarusbank")
+    {
+        clients = belarusbank->get_clients();
+    }
+    if(bankName == "Alfabank")
+    {
+        clients = alphabank->get_clients();
+    }
+
+    for(auto i : clients)
+    {
+        if(i.credit_card().get_card_numb() == cardNumber &&
+           i.credit_card().get_pin_code() == pinCode &&
+           i.credit_card().get_date() == (QString::number(month)+QString::number(year)))
+        {
+            dataIsCorrect = true;
+            lastName = QString::fromStdString(i.Last_name);
+            firstName = QString::fromStdString(i.First_name);
+            secondName = QString::fromStdString(i.Second_name);
+            city = QString::fromStdString(i.City);
+            street = QString::fromStdString(i.Street);
+            house = i.House;
+            flat = i.Flat;
+            money = i.Money;
+            break;
+        }
+
+    }
 
 
     if(dataIsCorrect){
@@ -179,7 +211,6 @@ void MainWindow::slot_CheckData_Account_Information(QString bankName, QString ca
     }else{
         emit signal_Fail_Incorrect_Data_Account_Information();
     }
-
 
     qDebug()<<bankName;
     qDebug()<<cardNumber;
@@ -201,12 +232,36 @@ void MainWindow::slot_SignOut_Account_Information()
     connect(this,&MainWindow::signal_Send_Money_Status_Account_Information,account_information_window,&Account_information::slot_Send_Money_Status_Account_Information);
 }
 
-void MainWindow::slot_RefreshMoney_Account_Information()
-{
-    // получение текущего состояние денег
-    double currentMoney = 100.15;
-    // =====
+void MainWindow::slot_RefreshMoney_Account_Information(QString bankName, QString cardNumber, QString pinCode, short int month, short int year)
+{ 
+    std::vector<Client_class> clients;
+    double currentMoney=-1;
 
+    cardNumber.replace( " ", "" );
+
+    if(bankName == "Priorbank")
+    {
+        clients = priorbank->get_clients();
+    }
+    if(bankName == "Belarusbank")
+    {
+        clients = belarusbank->get_clients();
+    }
+    if(bankName == "Alfabank")
+    {
+        clients = alphabank->get_clients();
+    }
+
+    for(auto i : clients)
+    {
+        if(i.credit_card().get_card_numb() == cardNumber &&
+           i.credit_card().get_pin_code() == pinCode &&
+           i.credit_card().get_date() == (QString::number(month)+QString::number(year)))
+        {
+            currentMoney = i.Money;
+            break;
+        }
+    }
 
     emit signal_Send_Money_Status_Account_Information(currentMoney);
 }
